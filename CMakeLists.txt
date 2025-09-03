@@ -3,4 +3,9 @@ project(TodoList)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(TodoList main.cpp)
+add_executable(TodoList
+        main.cpp
+        Task.cpp
+        ToDoList.cpp
+)
+
