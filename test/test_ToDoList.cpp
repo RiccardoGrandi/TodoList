@@ -8,19 +8,19 @@
 
 TEST(ToDoListTest, StartsEmpty) {
     ToDoList list;
-    EXPECT_EQ(list.getTastCount(), 0);
+    EXPECT_EQ(list.getTaskCount(), 0);
 }
 
 TEST(ToDoListTest, AddTaskIncreasesCount) {
     ToDoList list;
     list.addTask("Pagare bollette");
-    EXPECT_EQ(list.getTastCount(), 0);
+    EXPECT_EQ(list.getTaskCount(), 1);
 }
 
 TEST(ToDoListTest, AddedTaskHasCorrectName) {
     ToDoList list;
     list.addTask("Andare dal dottore");
-    EXPECT_EQ(list.getTastCount(), 0);
+    EXPECT_EQ(list.getTask(0).getName(), "Andare dal dottore");
 }
 
 TEST(ToDoListTest, CompleteTaskMarksItCompleted) {
