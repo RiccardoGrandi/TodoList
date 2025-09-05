@@ -23,5 +23,3 @@ L’obiettivo è mostrare i concetti di OOP, gestione di collezioni (`std::vecto
 
 Scelta:
 ```
-- [✗] → task non completata
-- [✓] → task completata
