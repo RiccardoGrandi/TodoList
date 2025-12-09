@@ -1,5 +1,5 @@
 //
-// Created by Riccardo on 03/09/2025.
+// Created by Riccardo
 //
 
 #include "Task.h"

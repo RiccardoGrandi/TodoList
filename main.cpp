@@ -1,5 +1,9 @@
+//
+// Created by Riccardo
+//
+
 #include <iostream>
-#include <limits>        // per numeric_limits
+#include <limits>        // per numeric_limits e per pulire il buffet (cin.ignore)
 #include <string>
 #include "ToDoList.h"
 using namespace std;
@@ -7,23 +11,25 @@ using namespace std;
 int main() {
     ToDoList list;
     int scelta;
-
+    string filename = "lista_attivita.txt"; // Nome fisso del file per semplicità
     do {
         cout << "\n--- TODO LIST ---\n";
         list.showTasks();
         cout << "\n 1. Aggiungi task\n";
         cout << " 2. Completa una task\n";
-        cout << " 3. Esci\n";
+        cout << " 3. Salva (su " << filename << ")\n";
+        cout << "4. Carica (da " << filename << ")\n";
+        cout << " 0. Esci\n";
         cout << "\nScelta: ";
 
-        // ===== Controllo input menu =====
+        // Controllo se l'utente inserisce lettere invece di numeri)
         if (!(cin >> scelta)) {
             cin.clear();
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
-            scelta = 0; // valore non valido
+            cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Svuota buffer
+            scelta = -1; // valore non valido
         }
 
-        cin.ignore(numeric_limits<streamsize>::max(), '\n'); // scarta eventuale newline rimasto
+        cin.ignore(numeric_limits<streamsize>::max(), '\n'); // scarta eventuale newline (invio) rimasto
 
         switch(scelta) {
             case 1: {
@@ -57,7 +63,7 @@ int main() {
                 break;
             }
 
-            case 3:
+            case 0:
                 cout << "Uscita...\n";
                 break;
 

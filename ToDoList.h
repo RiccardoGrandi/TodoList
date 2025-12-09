@@ -1,5 +1,5 @@
 //
-// Created by alber on 03/09/2025.
+// Created by Riccardo
 //
 
 #ifndef TODOLIST_TODOLIST_H
@@ -10,13 +10,20 @@
 
 class ToDoList {
 private:
-    std::vector<Task> tasks;
+    std::vector<Task> tasks; // Vettore dinamico
 public:
-    void addTask(const std::string& desc);
+    // Aggiunge task (con stato opzionale, default = false)
+    void addTask(const std::string& desc, bool isCompleted = false);
+
     void completeTask(int index);
     void showTasks() const;
     int getTaskCount() const;
+    // NECESSARIO PER I TEST: Restituisce una task per controllarla
     Task getTask(int index) const;
+
+    // Salva e Carica (solo TXT)
+    bool saveToFile(const std::string& filename) const;
+    bool loadFromFile(const std::string& filename);
 };
 
 
