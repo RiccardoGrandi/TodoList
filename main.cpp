@@ -3,7 +3,7 @@
 //
 
 #include <iostream>
-#include <limits>        // per numeric_limits e per pulire il buffet (cin.ignore)
+#include <limits>        // per numeric_limits e per pulire il buffer (cin.ignore)
 #include <string>
 #include "ToDoList.h"
 using namespace std;
@@ -18,7 +18,7 @@ int main() {
         cout << "\n 1. Aggiungi task\n";
         cout << " 2. Completa una task\n";
         cout << " 3. Salva (su " << filename << ")\n";
-        cout << "4. Carica (da " << filename << ")\n";
+        cout << " 4. Carica (da " << filename << ")\n";
         cout << " 0. Esci\n";
         cout << "\nScelta: ";
 
@@ -64,22 +64,23 @@ int main() {
             }
 
             case 3: {
-                    if (!list.isEmpty()) {
-                        if (list.saveToFile(filename))
-                            cout << "Salvaggio completato!\n";
-                        else
-                            cout << "Errore durante il salvataggio\n";
-                    }
+                if (list.getTaskCount() != 0) {
+                    if (list.saveToFile(filename))
+                        cout << "Salvaggio completato!\n";
                     else
-                        cout << "Non puoi salvare la lista è vuota!\n";
+                        cout << "Errore durante il salvataggio\n";
+                }
+                else
+                    cout << "Non puoi salvare la lista è vuota!\n";
                 break;
             }
 
             case 4: {
-                    if (list.loadFromFile(filename))
-                        cout << "Lista carciata correttamente da " << filename << "\n";
-                    else
-                        cout << "Errore durante il caricamento\n";
+                if (list.loadFromFile(filename))
+                    cout << "Lista carciata correttamente da " << filename << "\n";
+                else
+                    cout << "Errore durante il caricamento\n";
+                break;
             }
 
             case 0:

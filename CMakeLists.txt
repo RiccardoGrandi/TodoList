@@ -35,6 +35,7 @@ enable_testing()
 # ======================
 add_executable(todolist_tests
         test/test_ToDoList.cpp   # file dei test
+        test/test_Task.cpp
         Task.cpp
         ToDoList.cpp
 )

@@ -32,37 +32,49 @@ int ToDoList::getTaskCount() const {
 }
 
 Task ToDoList::getTask(int index) const {
-    // .at() lancia un'eccezione se l'indice è sbagliato, ottimo per i test
     return tasks.at(index);
 }
 
+// Salvataggio
 bool ToDoList::saveToFile(const std::string& filename) const {
     std::ofstream file(filename);
     if (!file.is_open())
         return false;
 
     for (const auto& task : tasks) {
-        // Scrivo: 1 NomeTask
+        // Scrivo 1 se completata, 0 se da fare
         file << (task.isCompleted() ?  1 : 0) << " " << task.getName() << std::endl;
     }
     file.close();
     return true;
 }
 
+bool ToDoList::taskExists(const std::string& name) const {
+    for (const auto& task : tasks) {
+        if (task.getName() == name) {
+            return true; // Trovato un duplicato!
+        }
+    }
+    return false; // Nessun duplicato trovato
+}
+
+// Caricamento
 bool ToDoList::loadFromFile(const std::string& filename) {
     std::ifstream file(filename);
     if (!file.is_open())
         return false;
 
-    tasks.clear(); // Resetto la lista
+    // tasks.clear(); // Resetto la lista
     int status;
     std::string name;
 
     // Leggo: Intero -> ignoro spazio -> Leggo resto riga
     while (file >> status) {
-        file.ignore();
-        std::getline(file, name);
-        addTask(name, (status == 1));
+        file.ignore(); // Salta lo spazio vuoto dopo il numero
+        std::getline(file, name); // Legge tutto il resto della riga
+
+        if (!taskExists(name))
+            addTask(name, (status == 1)); // Converto l'intero 1 in booleano true
     }
     file.close();
     return true;

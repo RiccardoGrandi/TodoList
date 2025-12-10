@@ -11,6 +11,9 @@
 class ToDoList {
 private:
     std::vector<Task> tasks; // Vettore dinamico
+
+    // Metodo privato di utilità: controlla se un nome esiste già
+    bool taskExists(const std::string& name) const;
 public:
     // Aggiunge task (con stato opzionale, default = false)
     void addTask(const std::string& desc, bool isCompleted = false);
