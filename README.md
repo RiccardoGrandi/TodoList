@@ -7,9 +7,29 @@ L’obiettivo è mostrare i concetti di OOP, gestione di collezioni (`std::vecto
 
 ## ✨ Funzionalità
 
-- ➕ Aggiungere un nuovo task
-- ✅ Segnare un task come completato
-- 📋 Visualizzare la lista dei task con stato (`✓` completato / `✗` non completato)
+- ➕ **Aggiungi Task**
+- ✅ **Completamento**: Segnare un'attività come completata.
+- 💾 **Gestione lista con file**: Salvataggio e caricamento su file `.txt`.
+- 📋 **Visualizzazione su console**: Elenco chiaro (`✓` completato / `✗` da fare).
+
+---
+
+## 💾 Formato File
+
+I dati vengono salvati in un file di testo semplice.
+Ogni riga inizia con un numero intero che rappresenta lo stato, seguito dal nome.
+* `0` = Da fare
+* `1` = Completato
+
+**Esempio `lista.txt`:**
+```text
+1 Comprare il pane
+0 Andare in palestra
+1 Fare la spesa
+```
+---
+
+**Esempio `console`:**
 
 ```cpp
 === TODO LIST ===
@@ -19,7 +39,9 @@ L’obiettivo è mostrare i concetti di OOP, gestione di collezioni (`std::vecto
 
  1. Aggiungi task
  2. Completa una task
- 3. Esci
+ 3. Salva su file
+ 4. Carica da file
+ 0. Esci
 
-Scelta:
+Scelta: 
 ```

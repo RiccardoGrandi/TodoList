@@ -63,6 +63,25 @@ int main() {
                 break;
             }
 
+            case 3: {
+                    if (!list.isEmpty()) {
+                        if (list.saveToFile(filename))
+                            cout << "Salvaggio completato!\n";
+                        else
+                            cout << "Errore durante il salvataggio\n";
+                    }
+                    else
+                        cout << "Non puoi salvare la lista è vuota!\n";
+                break;
+            }
+
+            case 4: {
+                    if (list.loadFromFile(filename))
+                        cout << "Lista carciata correttamente da " << filename << "\n";
+                    else
+                        cout << "Errore durante il caricamento\n";
+            }
+
             case 0:
                 cout << "Uscita...\n";
                 break;
@@ -72,7 +91,7 @@ int main() {
                 break;
         }
 
-    } while (scelta != 3);
+    } while (scelta != 0);
 
     return 0;
 }

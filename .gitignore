@@ -1,4 +1,4 @@
-# ===== Cartelle di build =====
+# Cartelle di build
 /build/
 /cmake-build-debug/
 /CMakeFiles/
@@ -6,11 +6,11 @@
 /Makefile
 /Testing/
 
-# ===== Eseguibili =====
+# Eseguibili
 TodoList
 todolist_tests
 
-# ===== File temporanei del compilatore =====
+# File temporanei del compilatore
 *.o
 *.obj
 *.exe
@@ -19,7 +19,7 @@ todolist_tests
 *.so
 *.dll
 
-# ===== File temporanei dell'IDE =====
+# File temporanei dell'IDE
 *.user
 *.suo
 *.swp
@@ -29,5 +29,5 @@ todolist_tests
 *.idea/
 *.vscode/
 
-# ===== File generati da CTest/CTestTestfile =====
+# File generati da CTest/CTestTestfile
 CTestTestfile.cmake
