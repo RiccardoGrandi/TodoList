@@ -11,7 +11,7 @@ using namespace std;
 int main() {
     ToDoList list;
     int scelta;
-    string filename = "lista_attivita.txt"; // Nome fisso del file per semplicità
+    string filename = "lista_attivita.txt"; // Nome fisso del file
     do {
         cout << "\n--- TODO LIST ---\n";
         list.showTasks();
@@ -71,13 +71,13 @@ int main() {
                         cout << "Errore durante il salvataggio\n";
                 }
                 else
-                    cout << "Non puoi salvare la lista è vuota!\n";
+                    cout << "Non puoi salvare, la lista è vuota!\n";
                 break;
             }
 
             case 4: {
                 if (list.loadFromFile(filename))
-                    cout << "Lista carciata correttamente da " << filename << "\n";
+                    cout << "Lista caricata correttamente da " << filename << "\n";
                 else
                     cout << "Errore durante il caricamento\n";
                 break;

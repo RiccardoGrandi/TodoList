@@ -9,7 +9,8 @@
 
 void ToDoList::addTask(const std::string& desc, bool isCompleted) {
     Task t(desc);
-    if (isCompleted) t.markCompleted();
+    if (isCompleted)
+        t.markCompleted();
     tasks.push_back(t);
 }
 
@@ -64,11 +65,10 @@ bool ToDoList::loadFromFile(const std::string& filename) {
     if (!file.is_open())
         return false;
 
-    // tasks.clear(); // Resetto la lista
     int status;
     std::string name;
 
-    // Leggo: Intero -> ignoro spazio -> Leggo resto riga
+    // Leggo: intero (stato della task) -> ignoro spazio -> leggo resto riga
     while (file >> status) {
         file.ignore(); // Salta lo spazio vuoto dopo il numero
         std::getline(file, name); // Legge tutto il resto della riga
