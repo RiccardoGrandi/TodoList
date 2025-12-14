@@ -10,6 +10,7 @@
 TodoList
 todolist_tests
 
+*.idea/
 
 # File generati da CTest/CTestTestfile
 CTestTestfile.cmake

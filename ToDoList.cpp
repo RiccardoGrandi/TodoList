@@ -7,12 +7,12 @@
 #include <fstream> // Libreria per i file
 
 
-bool ToDoList::addTask(const std::string& nome) {
+bool ToDoList::addTask(const std::string& nome, bool isCompleted) {
     if (taskExists(nome))
         return false;
 
     Task t(nome);
-    if (t.isCompleted())
+    if (isCompleted)
         t.markCompleted();
     tasks.push_back(t);
     return true;
@@ -76,7 +76,7 @@ bool ToDoList::loadFromFile(const std::string& filename) {
     while (file >> status) {
         file.ignore(); // Salta lo spazio vuoto dopo il numero
         std::getline(file, name); // Legge tutto il resto della riga
-        addTask(name);
+        addTask(name, (status == 1));
     }
     file.close();
     return true;

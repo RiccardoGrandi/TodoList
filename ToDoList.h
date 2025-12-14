@@ -13,7 +13,7 @@ private:
     std::vector<Task> tasks; // Vettore dinamico
 
 public:
-    bool addTask(const std::string& nome);
+    bool addTask(const std::string& nome, bool isCompleted = false);
 
     void completeTask(int index);
     void showTasks() const;
