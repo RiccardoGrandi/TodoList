@@ -36,11 +36,15 @@ int main() {
                 string nome;
                 cout << "Inserisci nome task: ";
                 getline(cin, nome);  // permette spazi
-                if (!nome.empty()) {
-                    list.addTask(nome);
-                } else {
-                    cout << "Nome task non valido!\n";
-                }
+                    if (!nome.empty()) {
+                        if (list.addTask(nome)) {
+                            cout << "Task aggiunta con successo!\n";
+                        } else {
+                            cout << "ERRORE: La task '" << nome << "' esiste gia'!\n";
+                        }
+                    } else {
+                        cout << "Nome task non valido!\n";
+                    }
                 break;
             }
 
