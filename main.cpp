@@ -28,8 +28,8 @@ int main() {
             cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Svuota buffer
             scelta = -1; // valore non valido
         }
-
-        cin.ignore(numeric_limits<streamsize>::max(), '\n'); // scarta eventuale newline (invio) rimasto
+        else
+            cin.ignore(numeric_limits<streamsize>::max(), '\n'); // scarta eventuale newline (invio) rimasto
 
         switch(scelta) {
             case 1: {
@@ -45,21 +45,25 @@ int main() {
             }
 
             case 2: {
-                int index;
-                cout << "Inserisci index task: ";
-                if (!(cin >> index)) {
-                    cin.clear();
-                    cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                    cout << "Input non valido!\n";
-                    break;
+                if (list.getTaskCount() == 0) {
+                    cout << "La lista e' vuota\n";
                 }
-                if (index < 0 || index >= list.getTaskCount()) {
-                    cout << "Index fuori range!\n";
-                } else {
-                    list.completeTask(index);
-                    cout << "Task completata!\n";
+                else {
+                    int index;
+                    cout << "Inserisci index task: ";
+                    if (!(cin >> index)) {
+                        cin.clear();
+                        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                        cout << "Input non valido!\n";
+                        break;
+                    }
+                    if (index < 0 || index >= list.getTaskCount()) {
+                        cout << "Index fuori range!\n";
+                    } else {
+                        list.completeTask(index);
+                        cout << "Task completata!\n";
+                    }
                 }
-                cin.ignore(numeric_limits<streamsize>::max(), '\n'); // scarta newline
                 break;
             }
 

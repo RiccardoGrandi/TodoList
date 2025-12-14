@@ -21,7 +21,7 @@ Ogni riga inizia con un numero intero che rappresenta lo stato, seguito dal nome
 * `0` = Da fare
 * `1` = Completato
 
-**Esempio `lista.txt`:**
+**Esempio `lista_attivita.txt`:**
 ```text
 1 Comprare il pane
 0 Andare in palestra
