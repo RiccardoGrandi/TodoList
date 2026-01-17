@@ -29,6 +29,8 @@ Ogni riga inizia con un numero intero che rappresenta lo stato, seguito dal nome
 ```
 ---
 
+## 📋 Formato console
+
 **Esempio `console`:**
 
 ```cpp

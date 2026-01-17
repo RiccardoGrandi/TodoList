@@ -22,7 +22,7 @@ int main() {
         cout << " 0. Esci\n";
         cout << "\nScelta: ";
 
-        // Controllo se l'utente inserisce lettere invece di numeri)
+        // Controllo se l'utente inserisce lettere invece di numeri
         if (!(cin >> scelta)) {
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Svuota buffer

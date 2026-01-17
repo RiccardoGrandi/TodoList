@@ -13,7 +13,7 @@ TEST(ToDoListTest, StartsEmpty) {
     EXPECT_EQ(list.getTaskCount(), 0);
 }
 
-// Test aggiunta file
+// Test aggiunta task
 TEST(ToDoListTest, AddTaskIncreasesCount) {
     ToDoList list;
     list.addTask("Pagare bollette");

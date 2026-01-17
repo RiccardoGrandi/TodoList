@@ -55,7 +55,6 @@ target_include_directories(todolist_tests
 target_link_libraries(todolist_tests
         gtest
         gtest_main
-        pthread
 )
 
 add_test(NAME ToDoListTests COMMAND todolist_tests)
